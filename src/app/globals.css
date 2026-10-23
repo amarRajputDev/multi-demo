@@ -3,6 +3,7 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  color-scheme: light;
 }
 
 @theme inline {
@@ -12,15 +13,118 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Respect reduced-motion globally: neutralise scroll-driven smoothness too. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Showcase-only decorative helpers (kept tiny and CSS-only). */
+.vizo-grid-bg {
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+.vizo-glow {
+  background:
+    radial-gradient(60% 50% at 20% 10%, rgba(99, 102, 241, 0.35), transparent 70%),
+    radial-gradient(50% 45% at 85% 20%, rgba(14, 165, 233, 0.28), transparent 70%),
+    radial-gradient(45% 40% at 60% 90%, rgba(168, 85, 247, 0.22), transparent 70%);
+}
+
+@keyframes vizo-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+.vizo-float {
+  animation: vizo-float 9s ease-in-out infinite;
+}
+
+@keyframes vizo-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Lightweight hero entrance — pure CSS, no client JS. */
+.vizo-fade-up {
+  animation: vizo-fade-up 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+/* Per-demo font utility classes. Fonts are loaded from the root layout so a
+   single document can host the showcase and any demo without FOUT swaps. */
+.font-aurora-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+.font-aurora-body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.font-scholar-display {
+  font-family: var(--font-eb-garamond), Georgia, serif;
+}
+.font-scholar-body {
+  font-family: var(--font-source-sans-3), system-ui, sans-serif;
+}
+.font-pulse-display {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+}
+.font-pulse-body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.font-northstar-display {
+  font-family: var(--font-newsreader), Georgia, serif;
+}
+.font-northstar-body {
+  font-family: var(--font-karla), system-ui, sans-serif;
+}
+.font-quantum-display {
+  font-family: var(--font-sora), system-ui, sans-serif;
+}
+.font-quantum-body {
+  font-family: var(--font-ibm-plex-sans), system-ui, sans-serif;
+}
+.font-quantum-mono {
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+}
+.font-bloom-display {
+  font-family: var(--font-outfit), system-ui, sans-serif;
+}
+.font-bloom-body {
+  font-family: var(--font-nunito-sans), system-ui, sans-serif;
+}
+.font-showcase {
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }
