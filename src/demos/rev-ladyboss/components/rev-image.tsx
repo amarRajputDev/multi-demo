@@ -117,7 +117,7 @@ export function MonogramTile({
   compact?: boolean;
   className?: string;
 }) {
-  const style = TILE_STYLES[tone];
+  const style = TILE_STYLES[tone] ?? TILE_STYLES[1];
   return (
     <div
       role="img"

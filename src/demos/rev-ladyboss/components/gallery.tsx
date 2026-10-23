@@ -44,7 +44,7 @@ export function ProductGallery({ product }: { product: RevProduct }) {
               tone={
                 active === 0
                   ? product.tone
-                  : (((product.tone + active) % 4) as 1 | 2 | 3 | 4)
+                  : ((((product.tone - 1 + active) % 4) + 1) as 1 | 2 | 3 | 4)
               }
             />
           </div>
@@ -81,7 +81,7 @@ export function ProductGallery({ product }: { product: RevProduct }) {
                 <MonogramTile
                   label={frame.label}
                   tone={
-                    (((product.tone + index) % 4) as 1 | 2 | 3 | 4)
+                    ((((product.tone - 1 + index) % 4) + 1) as 1 | 2 | 3 | 4)
                   }
                   compact
                 />
