@@ -71,6 +71,7 @@ export function SiteNav() {
   );
 
   return (
+    <>
     <header
       className={cn(
         "sticky top-0 z-50 bg-[#FAF7F2]/95 backdrop-blur-md transition-shadow duration-300",
@@ -193,8 +194,13 @@ export function SiteNav() {
           </button>
         </div>
       </div>
+    </header>
 
-      <MobileNav
+    {/* Both overlays are siblings of <header>, never children of it: the
+        header's backdrop-blur creates a containing block for
+        position:fixed, which would collapse these panels to the header box
+        on mobile instead of covering the viewport. */}
+    <MobileNav
         open={open}
         onClose={() => setOpen(false)}
         label="Site menu"
@@ -226,7 +232,7 @@ export function SiteNav() {
       />
 
       <SearchDialog open={searchOpen} onClose={() => setSearchOpen(false)} />
-    </header>
+    </>
   );
 }
 
