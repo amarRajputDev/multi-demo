@@ -504,5 +504,153 @@ export function MiniPreview({ slug }: { slug: DemoSlug }) {
           </div>
         </div>
       );
+
+    case "anyaa-attire":
+      return (
+        <div className="font-anyaa-body relative aspect-[16/10] overflow-hidden bg-[#FAF8F3] text-[#22332F]">
+          <div className="absolute -right-10 -top-12 h-44 w-44 rounded-full bg-[#D3E5DF]/70" />
+          <div className="absolute -bottom-16 -left-12 h-40 w-40 rounded-full bg-[#E7EEE9]" />
+          <div className="relative flex h-full flex-col justify-between p-4 sm:p-5">
+            <div className="flex items-center justify-between">
+              <span className="font-anyaa-display text-[11px] tracking-[0.3em] text-[#22332F]">
+                ANYAA ATTIRE
+              </span>
+              <span className="text-[6.5px] tracking-[0.24em] text-[#2E6F62] uppercase">
+                Everyday
+              </span>
+            </div>
+            <div>
+              <p className="font-anyaa-display text-[clamp(13px,2.1vw,21px)] leading-[1.05]">
+                Quiet luxury,
+                <br />
+                <em className="text-[#2E6F62] italic">everyday ease.</em>
+              </p>
+              <div className="mt-2.5 flex gap-1.5">
+                <span className="bg-[#22332F] px-2.5 py-1 text-[7px] tracking-[0.14em] text-[#FAF8F3] uppercase">
+                  Shop kurtis
+                </span>
+                <span className="border border-[#22332F]/25 px-2.5 py-1 text-[7px] tracking-[0.14em] text-[#22332F]/80 uppercase">
+                  Enquire
+                </span>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-1.5 border-t border-[#D3E5DF] pt-2 text-[6.5px] tracking-[0.12em] text-[#6E7C77] uppercase">
+              <span>Kurtis</span>
+              <span>Floral</span>
+              <span className="text-[#2E6F62]">Cotton</span>
+            </div>
+          </div>
+        </div>
+      );
+
+    case "exotix-in":
+      return (
+        <div className="font-exotix-body relative aspect-[16/10] overflow-hidden bg-[#0C0C0E] text-[#F2EFEA]">
+          <div className="absolute inset-y-0 right-0 w-1/3 bg-[linear-gradient(180deg,#E23B2E_0%,#7A1D16_100%)] opacity-80" />
+          <div className="relative flex h-full flex-col justify-between p-4 sm:p-5">
+            <div className="flex items-center justify-between">
+              <span className="font-exotix-display text-[11px] tracking-[0.3em]">
+                EXOTIX
+              </span>
+              <span className="font-exotix-mono text-[6px] tracking-[0.24em] text-[#E23B2E] uppercase">
+                Racing division
+              </span>
+            </div>
+            <div>
+              <p className="font-exotix-display text-[clamp(14px,2.3vw,24px)] uppercase leading-[0.92]">
+                Streetwear
+                <br />
+                built for
+                <br />
+                <span className="text-[#E23B2E]">the grid.</span>
+              </p>
+              <div className="mt-2.5 flex gap-1.5">
+                <span className="bg-[#E23B2E] px-2.5 py-1 text-[7px] tracking-[0.14em] text-[#F2EFEA] uppercase">
+                  Shop all
+                </span>
+                <span className="border border-white/25 px-2.5 py-1 text-[7px] tracking-[0.14em] text-[#F2EFEA]/75 uppercase">
+                  Jackets
+                </span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between border-t border-white/15 pt-2 font-exotix-mono text-[6px] tracking-[0.14em] text-[#8A8A92] uppercase">
+              <span>Hoodies</span>
+              <span>Tees</span>
+              <span className="text-[#B9BDC4]">Co-ords</span>
+            </div>
+          </div>
+        </div>
+      );
+
+    case "rev-ladyboss":
+      return (
+        <div className="font-rev-body relative aspect-[16/10] overflow-hidden bg-[#FAF4F3] text-[#1A1618]">
+          <div className="absolute right-0 top-0 h-full w-[42%] bg-[#F3DCE1]" />
+          <div className="relative flex h-full flex-col justify-between p-4 sm:p-5">
+            <span className="text-[7px] font-semibold tracking-[0.3em] text-[#B4707F] uppercase">
+              Rev Ladyboss
+            </span>
+            <div>
+              <p className="font-rev-heading text-[clamp(17px,2.8vw,28px)] leading-[0.86]">
+                THE
+                <br />
+                LADY BOSS
+                <br />
+                <span className="text-[#B4707F]">EDIT.</span>
+              </p>
+              <div className="mt-2.5 flex gap-1.5">
+                <span className="bg-[#1A1618] px-2.5 py-1 text-[7px] tracking-[0.14em] text-[#FAF4F3] uppercase">
+                  Shop the drop
+                </span>
+                <span className="border border-[#1A1618]/25 px-2.5 py-1 text-[7px] tracking-[0.14em] uppercase">
+                  Bag
+                </span>
+              </div>
+            </div>
+            <div className="grid grid-cols-3 gap-1.5 border-t border-[#E8D9DC] pt-2 text-[6.5px] tracking-[0.12em] text-[#7C7073] uppercase">
+              <span>Tunics</span>
+              <span>Maxis</span>
+              <span className="text-[#B4707F]">Jeans</span>
+            </div>
+          </div>
+        </div>
+      );
+
+    case "kurtis-by-sakshi":
+      return (
+        <div className="font-sakshi-body relative aspect-[16/10] overflow-hidden bg-[#FBF6EF] text-[#3B1F24]">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,#EFD9D5_0%,transparent_60%)]" />
+          <div className="relative flex h-full flex-col justify-between p-4 sm:p-5">
+            <div className="flex items-center justify-between">
+              <span className="font-sakshi-display text-[10px] tracking-[0.28em]">
+                KURTIS BY SAKSHI
+              </span>
+              <span className="text-[6.5px] tracking-[0.22em] text-[#8E3B47] uppercase">
+                Since the DM
+              </span>
+            </div>
+            <div>
+              <p className="font-sakshi-display text-[clamp(14px,2.2vw,22px)] leading-[1.02]">
+                Kurtis, curated
+                <br />
+                <em className="text-[#8E3B47] italic">for every day.</em>
+              </p>
+              <div className="mt-2.5 flex gap-1.5">
+                <span className="bg-[#8E3B47] px-2.5 py-1 text-[7px] tracking-[0.14em] text-[#FBF6EF] uppercase">
+                  Shop kurtis
+                </span>
+                <span className="border border-[#3B1F24]/25 px-2.5 py-1 text-[7px] tracking-[0.14em] uppercase">
+                  Enquire
+                </span>
+              </div>
+            </div>
+            <div className="flex items-center justify-between border-t border-[#E9DDD4] pt-2 text-[6.5px] tracking-[0.12em] text-[#7A6461] uppercase">
+              <span>Everyday</span>
+              <span>Printed</span>
+              <span className="text-[#8E3B47]">Sets</span>
+            </div>
+          </div>
+        </div>
+      );
   }
 }
