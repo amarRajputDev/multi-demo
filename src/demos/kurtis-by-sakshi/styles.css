@@ -1,0 +1,87 @@
+/* Kurtis By Sakshi — concept styles. Class names are brand-scoped (sakshi-*)
+   because CSS in this repo is global. Palette: ivory #FBF6EF, ink #3B1F24,
+   maroon #8E3B47, rose/terracotta #EFD9D5, muted #7A6461. */
+
+.font-sakshi-display {
+  font-family: var(--font-eb-garamond), Georgia, serif;
+}
+
+.font-sakshi-body {
+  font-family: var(--font-source-sans-3), system-ui, sans-serif;
+}
+
+/* Thin ornamental double rule with a centre diamond, used between sections. */
+.sakshi-ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  justify-content: center;
+  color: #8e3b47;
+}
+
+.sakshi-ornament::before,
+.sakshi-ornament::after {
+  content: "";
+  height: 1px;
+  width: min(5.5rem, 18vw);
+  background: linear-gradient(90deg, transparent, #d9c2bc);
+}
+
+.sakshi-ornament::after {
+  background: linear-gradient(90deg, #d9c2bc, transparent);
+}
+
+/* Soft panel used behind enquiry/notes blocks. */
+.sakshi-panel {
+  background:
+    linear-gradient(160deg, rgba(239, 217, 213, 0.55), rgba(251, 246, 239, 0.9));
+  border: 1px solid #eadcd4;
+}
+
+/* Typographic image placeholder tones — one per demo product for grid variety. */
+.sakshi-tone-1 {
+  background: linear-gradient(150deg, #f6e9e4 0%, #efd9d5 55%, #f8efe8 100%);
+}
+
+.sakshi-tone-2 {
+  background: linear-gradient(150deg, #f8f1e7 0%, #ead9cf 60%, #f3e4dd 100%);
+}
+
+.sakshi-tone-3 {
+  background: linear-gradient(160deg, #f2e3de 0%, #e6cfc9 50%, #f7efe9 100%);
+}
+
+.sakshi-tone-4 {
+  background: linear-gradient(145deg, #efe0d4 0%, #e8d3ce 55%, #f6ece4 100%);
+}
+
+.sakshi-tone-5 {
+  background: linear-gradient(150deg, #f7ebe3 0%, #edd8d2 45%, #f9f2ea 100%);
+}
+
+/* Woven-texture overlay for placeholder cards. */
+.sakshi-weave {
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      rgba(142, 59, 71, 0.05) 0 2px,
+      transparent 2px 8px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(59, 31, 36, 0.04) 0 2px,
+      transparent 2px 8px
+    );
+}
+
+/* Marquee-ish tracked label used in the announcement strip. */
+.sakshi-eyebrow {
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+}
+
+/* Disabled select styling for the gracefully-disabled price sort. */
+.sakshi-select-disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}

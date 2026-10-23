@@ -1,0 +1,20 @@
+/*
+ * Rev Ladyboss demo - isolated typography layer.
+ * Fonts are already loaded by the root layout (Inter + Karla via next/font);
+ * these classes only belong to this demo and change no shared rule.
+ */
+
+.font-rev-display {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+.font-rev-body {
+  font-family: var(--font-karla), system-ui, sans-serif;
+}
+
+.font-rev-heading {
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  text-transform: uppercase;
+}

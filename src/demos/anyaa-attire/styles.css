@@ -1,0 +1,14 @@
+/*
+ * Anyaa Attire demo - isolated typography layer.
+ *
+ * Font files are already loaded by the root layout via next/font; nothing new
+ * is downloaded here. These classes belong only to this demo.
+ */
+
+.font-anyaa-display {
+  font-family: var(--font-fraunces), Georgia, "Times New Roman", serif;
+}
+
+.font-anyaa-body {
+  font-family: var(--font-karla), ui-sans-serif, system-ui, sans-serif;
+}

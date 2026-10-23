@@ -1,0 +1,79 @@
+/*
+ * Exotix In demo - isolated typography + motif layer.
+ * Font files are already loaded by the root layout (Syne, Archivo, IBM Plex
+ * Mono). These classes belong only to this demo.
+ */
+
+.font-exotix-display {
+  font-family: var(--font-syne), "Helvetica Neue", Arial, sans-serif;
+}
+
+.font-exotix-body {
+  font-family: var(--font-archivo), system-ui, sans-serif;
+}
+
+.font-exotix-mono {
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+}
+
+/* Motorsport timing-strip divider: evenly spaced tick marks along a lane. */
+.exotix-timing-strip {
+  background-image: repeating-linear-gradient(
+    to right,
+    #232327 0px,
+    #232327 1px,
+    transparent 1px,
+    transparent 14px
+  );
+  background-position: center;
+  background-repeat: repeat-x;
+  background-size: 14px 10px;
+}
+
+/* Racing lane dashes used behind the hero + drop bands. */
+.exotix-lane {
+  background-image: repeating-linear-gradient(
+    to right,
+    #e23b2e 0px,
+    #e23b2e 34px,
+    transparent 34px,
+    transparent 68px
+  );
+}
+
+/* Drawer/overlay entrance motion (kept dependency-free). */
+@keyframes exotix-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes exotix-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.exotix-fade {
+  animation: exotix-fade-in 0.2s ease-out both;
+}
+
+.exotix-slide {
+  animation: exotix-slide-in 0.28s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .exotix-fade,
+  .exotix-slide {
+    animation: none;
+  }
+}
+

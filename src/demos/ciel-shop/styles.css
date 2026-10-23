@@ -1,0 +1,90 @@
+/*
+ * CIÈL / Ciel Shop demo — isolated style layer.
+ *
+ * Fonts (Syne + Inter) are already self-hosted by the root layout via
+ * next/font, so nothing new is downloaded. Every rule below belongs to this
+ * demo only and changes no shared or other-demo style.
+ */
+
+.font-ciel-display {
+  font-family: var(--font-syne), "Helvetica Neue", Arial, sans-serif;
+}
+
+.font-ciel-body {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Oversized editorial wordmark spacing. */
+.ciel-wordmark {
+  font-family: var(--font-syne), "Helvetica Neue", Arial, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+}
+
+/* Subtle grain for dark campaign panels. */
+.ciel-grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.18;
+  background-image: radial-gradient(
+    rgba(255, 255, 255, 0.15) 0.5px,
+    transparent 0.5px
+  );
+  background-size: 3px 3px;
+}
+
+.ciel-marquee {
+  animation: ciel-marquee 38s linear infinite;
+}
+
+@keyframes ciel-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.ciel-underline {
+  position: relative;
+}
+
+.ciel-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  height: 1px;
+  width: 100%;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms ease;
+}
+
+.ciel-underline:hover::after,
+.ciel-underline:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.ciel-no-scrollbar {
+  scrollbar-width: none;
+}
+
+.ciel-no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ciel-marquee {
+    animation: none;
+  }
+
+  .ciel-underline::after {
+    transition: none;
+  }
+}

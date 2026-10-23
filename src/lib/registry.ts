@@ -23,7 +23,12 @@ export type DemoSlug =
   | "bloom"
   | "tm-sons"
   | "sy-collections"
-  | "ciel-shop";
+  | "ciel-shop"
+  | "anyaa-attire"
+  | "exotix-in"
+  | "khaleezi-designs"
+  | "rev-ladyboss"
+  | "kurtis-by-sakshi";
 
 export interface DemoMeta {
   slug: DemoSlug;
@@ -221,6 +226,101 @@ export const DEMOS: DemoMeta[] = [
     fonts: { display: "Syne", body: "Inter" },
     path: "/demos/ciel-shop",
     utilityTone: "dark",
+  },
+  {
+    slug: "anyaa-attire",
+    name: "Anyaa Attire",
+    shortName: "Anyaa",
+    tagline:
+      "Contemporary women's kurtis and everyday wear — a soft teal and ivory boutique storefront with delicate editorial typography and botanical detail.",
+    styleLabel: "Boutique · Editorial · Botanical",
+    audience: "Women's fashion · Everyday kurtis",
+    palette: {
+      bg: "#FAF8F3",
+      ink: "#22332F",
+      accent: "#2E6F62",
+      accentSoft: "#D3E5DF",
+      muted: "#6E7C77",
+    },
+    fonts: { display: "Fraunces", body: "Karla" },
+    path: "/demos/anyaa-attire",
+    utilityTone: "light",
+  },
+  {
+    slug: "exotix-in",
+    name: "Exotix In",
+    shortName: "Exotix",
+    tagline:
+      "A Gen-Z streetwear redesign for the live exotix.in label — motorsport structure, racing red on charcoal, oversized campaign imagery and verified catalogue data.",
+    styleLabel: "Streetwear · Motorsport · Bold",
+    audience: "Streetwear retail · Gen-Z fashion",
+    palette: {
+      bg: "#0C0C0E",
+      ink: "#F2EFEA",
+      accent: "#E23B2E",
+      accentSoft: "#B9BDC4",
+      muted: "#8A8A92",
+    },
+    fonts: { display: "Syne", body: "Archivo" },
+    path: "/demos/exotix-in",
+    utilityTone: "dark",
+  },
+  {
+    slug: "khaleezi-designs",
+    name: "Khaleezi Designs",
+    shortName: "Khaleezi",
+    tagline:
+      "Size-inclusive ethnicwear from a WhatsApp-first label — cotton dupatta sets, a wide size range and an enquiry-led catalogue on warm ivory.",
+    styleLabel: "Ethnic · Inclusive · Editorial",
+    audience: "Ethnicwear · Size-inclusive women's fashion",
+    palette: {
+      bg: "#F7F2E9",
+      ink: "#2A2320",
+      accent: "#2F6D72",
+      accentSoft: "#D9C7D6",
+      muted: "#7A6E67",
+    },
+    fonts: { display: "Newsreader", body: "Jost" },
+    path: "/demos/khaleezi-designs",
+    utilityTone: "light",
+  },
+  {
+    slug: "rev-ladyboss",
+    name: "Rev Ladyboss",
+    shortName: "Ladyboss",
+    tagline:
+      "A contemporary blush-and-black boutique concept — bold collection headings, editorial product grids and a client-side bag for a social-first fashion seller.",
+    styleLabel: "Contemporary · Blush · Boutique",
+    audience: "Women's fashion · Instagram-led retail",
+    palette: {
+      bg: "#FAF4F3",
+      ink: "#1A1618",
+      accent: "#B4707F",
+      accentSoft: "#F3DCE1",
+      muted: "#7C7073",
+    },
+    fonts: { display: "Inter", body: "Karla" },
+    path: "/demos/rev-ladyboss",
+    utilityTone: "light",
+  },
+  {
+    slug: "kurtis-by-sakshi",
+    name: "Kurtis By Sakshi",
+    shortName: "Sakshi",
+    tagline:
+      "A premium kurti storefront in muted maroon and terracotta — elegant serif headings, refined collection cards and an enquiry-first ordering flow.",
+    styleLabel: "Kurtis · Serif · Refined",
+    audience: "Kurtis & ethnicwear · DM ordering",
+    palette: {
+      bg: "#FBF6EF",
+      ink: "#3B1F24",
+      accent: "#8E3B47",
+      accentSoft: "#EFD9D5",
+      muted: "#7A6461",
+    },
+    fonts: { display: "EB Garamond", body: "Source Sans 3" },
+    path: "/demos/kurtis-by-sakshi",
+    utilityTone: "light",
   },
 ];
 

@@ -1,0 +1,61 @@
+/*
+ * Khaleezi Designs demo — isolated style layer.
+ * Newsreader + Jost are already self-hosted by the root layout via next/font,
+ * so nothing new is downloaded. Every rule here belongs to this demo only.
+ */
+
+.font-khaleezi-display {
+  font-family: var(--font-newsreader), Georgia, "Times New Roman", serif;
+}
+
+.font-khaleezi-body {
+  font-family: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+}
+
+.khaleezi-eyebrow {
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+}
+
+.khaleezi-rule {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    rgba(47, 109, 114, 0.35),
+    transparent
+  );
+  height: 1px;
+}
+
+/* Woven-fabric placeholder texture used behind pending product photography. */
+.khaleezi-weave {
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(42, 35, 32, 0.05) 0 1px,
+      transparent 1px 7px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(47, 109, 114, 0.06) 0 1px,
+      transparent 1px 9px
+    );
+}
+
+.khaleezi-lift {
+  transition: transform 500ms ease, box-shadow 500ms ease;
+}
+
+.khaleezi-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 40px -30px rgba(42, 35, 32, 0.55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .khaleezi-lift {
+    transition: none;
+  }
+
+  .khaleezi-lift:hover {
+    transform: none;
+  }
+}

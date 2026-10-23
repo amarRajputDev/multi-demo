@@ -415,5 +415,94 @@ export function MiniPreview({ slug }: { slug: DemoSlug }) {
           </div>
         </div>
       );
+
+    case "ciel-shop":
+      return (
+        <div className="font-ciel-body relative aspect-[16/10] overflow-hidden bg-[#0E0E10] text-[#F4F1EC]">
+          <Image
+            src="/images/cielshop/brand/brand-931905-full.jpg"
+            alt=""
+            fill
+            sizes="(max-width: 768px) 90vw, 40vw"
+            className="object-cover object-[60%_20%] opacity-60"
+          />
+          <span
+            aria-hidden
+            className="absolute inset-0 bg-gradient-to-r from-[#0E0E10] via-[#0E0E10]/80 to-transparent"
+          />
+          <div className="relative flex h-full flex-col justify-between p-4 sm:p-5">
+            <div className="flex items-center justify-between">
+              <span className="ciel-wordmark text-[11px] tracking-[0.28em]">
+                CIÈL
+              </span>
+              <span className="text-[7px] tracking-[0.24em] text-[#A9D6E5] uppercase">
+                Streetwear
+              </span>
+            </div>
+            <div>
+              <p className="font-ciel-display text-[clamp(14px,2.2vw,23px)] leading-[0.98]">
+                WHERE THE SKY
+                <br />
+                <span className="text-[#8A8F96]">KNOWS NO LIMITS.</span>
+              </p>
+              <div className="mt-2.5 flex flex-wrap gap-1.5">
+                <span className="bg-[#F4F1EC] px-2.5 py-1 text-[7px] tracking-[0.16em] text-[#0E0E10] uppercase">
+                  Explore collection
+                </span>
+                <span className="border border-white/25 px-2.5 py-1 text-[7px] tracking-[0.16em] text-[#F4F1EC]/80 uppercase">
+                  New arrivals
+                </span>
+              </div>
+            </div>
+            <div className="grid grid-cols-4 gap-1.5 border-t border-white/15 pt-2 text-[6.5px] tracking-[0.12em] text-[#8A8F96] uppercase">
+              <span>Upper</span>
+              <span>Bottom</span>
+              <span>Co-ords</span>
+              <span className="text-[#A9D6E5]">One of one</span>
+            </div>
+          </div>
+        </div>
+      );
+
+    case "khaleezi-designs":
+      return (
+        <div className="font-khaleezi-body relative aspect-[16/10] overflow-hidden bg-[#F7F2E9] text-[#2A2320]">
+          <div className="flex h-full">
+            <div className="flex flex-1 flex-col justify-between p-4 sm:p-5">
+              <span className="khaleezi-eyebrow text-[7px] text-[#2F6D72]">
+                Ethnicwear · small to 7XL
+              </span>
+              <div>
+                <p className="font-khaleezi-display text-[clamp(13px,2.1vw,21px)] leading-[1.02]">
+                  Ethnicwear, cut for
+                  <br />
+                  <em className="italic text-[#2F6D72]">every</em> body.
+                </p>
+                <div className="mt-2.5 flex flex-wrap gap-1.5">
+                  <span className="bg-[#2F6D72] px-2.5 py-1 text-[7px] tracking-[0.14em] text-[#FBF8F2] uppercase">
+                    Shop collection
+                  </span>
+                  <span className="border border-[#2A2320]/25 px-2.5 py-1 text-[7px] tracking-[0.14em] text-[#2A2320]/80 uppercase">
+                    Size guide
+                  </span>
+                </div>
+              </div>
+              <div className="grid grid-cols-4 gap-1 border-t border-[#E4DCD0] pt-2 text-[6px] tracking-[0.1em] text-[#7A6E67] uppercase">
+                <span>Dupatta sets</span>
+                <span>Cotton</span>
+                <span>Pants</span>
+                <span className="text-[#2F6D72]">S – 7XL</span>
+              </div>
+            </div>
+
+            <div className="relative w-[38%] shrink-0 overflow-hidden border-l border-[#E4DCD0]">
+              <div className="khaleezi-weave h-full w-full bg-[linear-gradient(155deg,#EFF2ED_0%,#CFDCD6_100%)]" />
+              <span className="absolute inset-x-0 bottom-0 p-2.5 text-[6.5px] tracking-[0.16em] text-[#2F6D72] uppercase">
+                Artwork pending
+              </span>
+            </div>
+          </div>
+        </div>
+      );
   }
 }
