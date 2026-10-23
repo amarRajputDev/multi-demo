@@ -13,7 +13,7 @@ export default function NotFound() {
         </h1>
         <p className="mt-3 text-sm leading-relaxed text-white/60">
           The demo you&rsquo;re looking for may have been renamed. Head back to
-          the studio to explore all six coaching website designs.
+          the studio to explore every website design.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <Link

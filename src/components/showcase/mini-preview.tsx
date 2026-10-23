@@ -1,5 +1,7 @@
 import Image from "next/image";
 import type { DemoSlug } from "@/lib/registry";
+import { SyImage } from "@/demos/sy-collections/components/sy-image";
+import { syImages } from "@/demos/sy-collections/images";
 
 /**
  * CSS miniature previews of each concept — each card recreates the demo's own
@@ -300,6 +302,115 @@ export function MiniPreview({ slug }: { slug: DemoSlug }) {
                   <span className="font-bold text-[#E8836F]">{a}</span> {b}
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      );
+
+    case "tm-sons":
+      return (
+        <div className="font-tmsons-body relative aspect-[16/10] overflow-hidden bg-[#FAF7F2] text-[#1C1A17]">
+          <div className="flex h-full flex-col p-5">
+            <div className="flex items-center justify-between border-b border-[#1C1A17]/15 pb-2">
+              <span className="flex items-center gap-2">
+                <span
+                  aria-hidden
+                  className="h-3.5 w-3.5 rounded-full border-2 border-[#B23B2E]"
+                />
+                <span className="font-tmsons-display text-[10px] tracking-[0.3em] text-[#1C1A17] uppercase">
+                  TM SONS
+                </span>
+              </span>
+              <span className="text-[7px] tracking-[0.2em] text-[#6F6A61] uppercase">
+                Wholesale
+              </span>
+            </div>
+
+            <div className="grid flex-1 grid-cols-[1.25fr_1fr] gap-3 pt-3">
+              <div className="flex flex-col justify-center">
+                <span className="text-[7px] tracking-[0.28em] text-[#B23B2E] uppercase">
+                  Ludhiana
+                </span>
+                <p className="font-tmsons-display mt-2 text-[clamp(12px,1.75vw,18px)] leading-[1.15]">
+                  Women&rsquo;s Fashion, Curated for{" "}
+                  <em className="text-[#B23B2E]">Every Collection.</em>
+                </p>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                  <span className="bg-[#1C1A17] px-2.5 py-1 text-[7px] tracking-[0.16em] text-[#FAF7F2] uppercase">
+                    Explore
+                  </span>
+                  <span className="border border-[#1C1A17]/30 px-2.5 py-1 text-[7px] tracking-[0.16em] text-[#1C1A17] uppercase">
+                    Wholesale
+                  </span>
+                </div>
+              </div>
+              <div className="relative overflow-hidden border border-[#1C1A17]/12">
+                <Image
+                  src="/images/tm-sons/products/premium-cardigan.jpg"
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 90vw, 40vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            <div className="mt-3 grid grid-cols-4 gap-1.5 border-t border-[#1C1A17]/15 pt-2 text-[7px] tracking-[0.1em] text-[#6F6A61] uppercase">
+              <span>Cardigans</span>
+              <span>Co-ords</span>
+              <span>Farshi</span>
+              <span className="text-[#B23B2E]">Quote req.</span>
+            </div>
+          </div>
+        </div>
+      );
+
+    case "sy-collections":
+      return (
+        <div className="font-sy-body relative aspect-[16/10] overflow-hidden bg-[#FBF6F2] text-[#2C1F26]">
+          <div className="flex h-full">
+            <div className="flex flex-1 flex-col justify-between p-4 sm:p-5">
+              <span className="text-[7.5px] tracking-[0.3em] text-[#A63D57] uppercase">
+                Everyday Style. Thoughtfully Priced.
+              </span>
+              <div>
+                <p className="font-sy-display text-[clamp(13px,2vw,21px)] leading-[1.06]">
+                  Everyday Elegance,
+                  <br />
+                  <em className="text-[#A63D57] italic">Made Yours.</em>
+                </p>
+                <div className="mt-2.5 flex flex-wrap gap-1.5">
+                  <span className="rounded-full bg-[#2C1F26] px-2.5 py-1 text-[7px] tracking-[0.16em] text-[#FBF6F2] uppercase">
+                    Shop the collection
+                  </span>
+                  <span className="rounded-full border border-[#DCCFC9] px-2.5 py-1 text-[7px] tracking-[0.16em] text-[#4B2C3B] uppercase">
+                    Kurti sets
+                  </span>
+                </div>
+              </div>
+              <div className="grid grid-cols-3 gap-1.5 border-t border-[#EADFDB] pt-2 text-[6.5px] tracking-[0.12em] text-[#8B7B81] uppercase">
+                <span>Kurtis</span>
+                <span>Cotton</span>
+                <span className="text-[#A63D57]">Sets</span>
+              </div>
+            </div>
+
+            <div className="relative w-[42%] shrink-0 overflow-hidden">
+              <SyImage
+                src={syImages.burgundyOnForm}
+                alt=""
+                aspectClassName="h-full"
+                className="h-full"
+                loading="eager"
+                imgClassName="object-cover"
+              />
+              <span
+                aria-hidden
+                className="absolute inset-0 bg-gradient-to-t from-[#2C1F26]/70 via-transparent to-transparent"
+              />
+              <span className="absolute inset-x-0 bottom-0 p-2.5 text-[7px] tracking-[0.18em] text-[#FBF6F2] uppercase">
+                Kurti-Pant Sets
+              </span>
             </div>
           </div>
         </div>

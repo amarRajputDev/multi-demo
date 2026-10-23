@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import {
   Archivo,
+  Bodoni_Moda,
   EB_Garamond,
   Fraunces,
   Geist,
@@ -8,12 +9,14 @@ import {
   IBM_Plex_Mono,
   IBM_Plex_Sans,
   Inter,
+  Jost,
   Karla,
   Newsreader,
   Nunito_Sans,
   Outfit,
   Sora,
   Source_Sans_3,
+  Syne,
 } from "next/font/google";
 import "./globals.css";
 
@@ -85,11 +88,24 @@ const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
   subsets: ["latin"],
 });
+const bodoniModa = Bodoni_Moda({
+  variable: "--font-bodoni-moda",
+  subsets: ["latin"],
+});
+const jost = Jost({
+  variable: "--font-jost",
+  subsets: ["latin"],
+});
+const syne = Syne({
+  variable: "--font-syne",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700", "800"],
+});
 
 export const metadata: Metadata = {
-  title: "Vizo Technology — Coaching Website Demo Studio",
+  title: "Vizo Technology — Website Demo Studio",
   description:
-    "Six premium, production-quality website concepts for coaching institutes. Explore live demos and pick the design that fits your brand.",
+    "Seven premium, production-quality website concepts — six coaching institutes and one women's fashion & wholesale brand. Explore live demos and pick the design that fits your brand.",
 };
 
 export default function RootLayout({
@@ -115,6 +131,9 @@ export default function RootLayout({
         ibmPlexMono.variable,
         outfit.variable,
         nunitoSans.variable,
+        bodoniModa.variable,
+        jost.variable,
+        syne.variable,
         "h-full antialiased",
       ].join(" ")}
     >

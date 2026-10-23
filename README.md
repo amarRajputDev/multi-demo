@@ -1,8 +1,8 @@
-# Vizo Technology — Coaching Website Demo Studio
+# Vizo Technology — Website Demo Studio
 
-A single Next.js app containing **six visually distinct, production-quality coaching-institute website demos**, plus a premium showcase where visitors can compare them.
+A single Next.js app containing **visually distinct, production-quality website demos** — six coaching-institute concepts plus fashion and retail concepts — plus a premium showcase where visitors can compare them.
 
-Open `/` → explore six complete brands → click into any live demo with its own pages, typography, motion and mobile experience.
+Open `/` → explore every complete brand → click into any live demo with its own pages, typography, motion and mobile experience.
 
 | Route | Concept | Style |
 | --- | --- | --- |
@@ -12,10 +12,15 @@ Open `/` → explore six complete brands → click into any live demo with its o
 | `/demos/northstar` | **Northstar Institute** | Minimal · Editorial · Mentor-led (UPSC/SSC/Banking) |
 | `/demos/quantum` | **Quantum Learning** | Technical · Futuristic · Precise (STEM) |
 | `/demos/bloom` | **Bloom Learning** | Friendly · Warm · Optimistic (Foundation/Olympiad) |
+| `/demos/tm-sons` | **TM SONS** | Editorial · Premium · Wholesale (Women's apparel, Ludhiana) |
 
-Every demo has a homepage plus `courses`, `faculty`, `results`, `about` and `contact` pages, an accessible mobile menu, a demo-only enquiry form with a prefilled WhatsApp hand-off, and a discreet utility bar to jump between concepts.
+Every coaching demo has a homepage plus `courses`, `faculty`, `results`, `about` and `contact` pages, an accessible mobile menu, a demo-only enquiry form with a prefilled WhatsApp hand-off, and a discreet utility bar to jump between concepts.
+
+**TM SONS** (`/demos/tm-sons`) is the apparel concept: a product catalogue, `shop`, `collections/[category]`, `products/[slug]`, `wholesale`, `about` and `contact` routes, a client-persisted enquiry list and a wholesale quote builder that ends on an on-screen preview instead of a checkout. No prices, minimum order quantities, email address or opening hours are published because none have been confirmed with the business.
 
 > **Demo content notice:** every institute name, result, rank, faculty credential, fee and testimonial in this project is **illustrative fictional content** created for a design demonstration. Nothing has been verified against real-world outcomes. Each data file carries this disclaimer at the top.
+>
+> **TM SONS notice:** contact numbers and the location line come from public listings and are pending owner verification. Product names are descriptive demo labels, images are locally saved references of public posts awaiting approval, and the whole route ships `noindex` metadata.
 
 ---
 

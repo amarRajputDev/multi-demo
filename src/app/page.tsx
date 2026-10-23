@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { ArrowDown, Sparkles } from "lucide-react";
-import { DEMOS } from "@/lib/registry";
+import { DEMOS, numberWord } from "@/lib/registry";
 import { ShowcaseNav } from "@/components/showcase/showcase-nav";
 import { DemoCards } from "@/components/showcase/demo-cards";
 import { WhatIsIncluded } from "@/components/showcase/what-is-included";
@@ -25,14 +25,14 @@ export default function ShowcasePage() {
           <div className="mx-auto max-w-6xl px-4 pb-16 pt-20 sm:px-6 sm:pb-24 sm:pt-28 lg:pt-36">
             <p className="vizo-fade-up inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-white/70">
               <Sparkles aria-hidden className="h-3.5 w-3.5 text-indigo-300" />
-              Coaching Website Demo Studio · Six live concepts
+              Website Demo Studio · {numberWord(DEMOS.length)} live concepts
             </p>
 
             <h1
               className="vizo-fade-up mt-7 max-w-4xl text-[clamp(2.4rem,6vw,4.5rem)] font-semibold leading-[1.03] tracking-tight"
               style={{ animationDelay: "80ms" }}
             >
-              Six Visions. One Mission.
+              {numberWord(DEMOS.length)} Visions. One Mission.
               <br />
               <span className="bg-gradient-to-r from-indigo-300 via-sky-300 to-cyan-200 bg-clip-text text-transparent">
                 Your Students&rsquo; Success.
@@ -43,11 +43,12 @@ export default function ShowcasePage() {
               className="vizo-fade-up mt-6 max-w-2xl text-base leading-relaxed text-white/65 sm:text-lg"
               style={{ animationDelay: "160ms" }}
             >
-              Explore six completely different website concepts for coaching
-              institutes — each with its own design philosophy, typography,
-              content and mobile experience. Open any demo live, click through
-              its inner pages, and shortlist the design that feels like your
-              institute.
+              Explore {numberWord(DEMOS.length)} completely different website
+              concepts — coaching institutes alongside retail and fashion
+              brands such as TM SONS of Ludhiana. Each has its own design
+              philosophy, typography, content and mobile experience. Open any
+              demo live, click through its inner pages, and shortlist the design
+              that fits your institute or business.
             </p>
 
             <div
@@ -58,7 +59,7 @@ export default function ShowcasePage() {
                 href="#concepts"
                 className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#070B14] transition hover:bg-white/90 active:scale-[0.98]"
               >
-                Explore the six concepts
+                Explore the {numberWord(DEMOS.length)} concepts
                 <ArrowDown aria-hidden className="h-4 w-4" />
               </a>
               <Link
@@ -74,8 +75,8 @@ export default function ShowcasePage() {
               style={{ animationDelay: "320ms" }}
             >
               {[
-                ["6", "distinct designs"],
-                ["36", "pages built"],
+                [String(DEMOS.length), "distinct designs"],
+                ["100%", "responsive"],
                 ["1", "link to explore"],
                 ["0", "backend required"],
               ].map(([value, label]) => (

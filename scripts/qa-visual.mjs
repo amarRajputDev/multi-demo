@@ -19,6 +19,7 @@ const ROUTES = [
   "/demos/northstar",
   "/demos/quantum",
   "/demos/bloom",
+  "/demos/tm-sons",
 ];
 
 const EXTRA = [
@@ -34,6 +35,11 @@ const EXTRA = [
   "/demos/quantum/contact",
   "/demos/bloom/courses",
   "/demos/bloom/contact",
+  "/demos/tm-sons/shop",
+  "/demos/tm-sons/wholesale",
+  "/demos/tm-sons/contact",
+  "/demos/tm-sons/collections/winterwear",
+  "/demos/tm-sons/products/premium-embroidered-cardigan",
 ];
 
 const SHOTS = [

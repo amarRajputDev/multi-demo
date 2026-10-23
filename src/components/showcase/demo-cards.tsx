@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
-import { DEMOS } from "@/lib/registry";
+import { DEMOS, numberWord } from "@/lib/registry";
 import { MiniPreview } from "./mini-preview";
 
 /**
- * The six concept cards. Each embeds a live CSS miniature of the actual demo
+ * The concept cards. Each embeds a live CSS miniature of the actual demo
  * (palette, type, composition) plus the design-style label and an explicit
  * "Explore Live Demo" action.
  */
@@ -18,12 +18,13 @@ export function DemoCards() {
               01 — The Collection
             </p>
             <h2 className="mt-3 max-w-xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Six complete website concepts
+              {numberWord(DEMOS.length)} complete website concepts
             </h2>
           </div>
           <p className="max-w-sm text-sm leading-relaxed text-white/60">
-            Six independent brands — not one template in six colours. Each demo
-            is a fully built site with its own pages, content and personality.
+            {numberWord(DEMOS.length)} independent brands — not one template in{" "}
+            {numberWord(DEMOS.length)} colours. Each demo is a fully built site
+            with its own pages, content and personality.
           </p>
         </div>
 

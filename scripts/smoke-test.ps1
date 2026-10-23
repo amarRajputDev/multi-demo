@@ -22,6 +22,41 @@ foreach ($slug in "aurora","scholar-house","pulse-prep","northstar","quantum","b
   }
 }
 
+# TM SONS (apparel + wholesale demo): static routes, collections and products.
+foreach ($seg in "", "/shop", "/wholesale", "/about", "/contact") {
+  $routes += @{ p = "/demos/tm-sons$seg"; e = 200 }
+}
+foreach ($cat in "winterwear","cardigans","co-ord-sets","western-wear","ethnicwear","farshi-sets","sweatshirts") {
+  $routes += @{ p = "/demos/tm-sons/collections/$cat"; e = 200 }
+}
+foreach ($prod in "premium-embroidered-cardigan","premium-woollen-collection","patterned-winterwear","farshi-sets-collection","imported-sweatshirts-collection","olive-woollen-coord","premium-ethnicwear-collection") {
+  $routes += @{ p = "/demos/tm-sons/products/$prod"; e = 200 }
+}
+
+# Unknown slugs are checked on rendered content below rather than on status
+# code: with cacheComponents/PPR the dynamic hole can stream the not-found
+# boundary after a 200 shell, so the status alone is not a reliable signal.
+$notFoundChecks = @(
+  "/demos/tm-sons/collections/not-a-collection",
+  "/demos/tm-sons/products/not-a-product"
+)
+
+function Get-ResponseBody($url) {
+  try {
+    $r = Invoke-WebRequest -Uri $url -UseBasicParsing -TimeoutSec 25 -MaximumRedirection 5
+    return [string]$r.Content
+  } catch {
+    $resp = $_.Exception.Response
+    if (-not $resp) { return "" }
+    try {
+      $reader = New-Object System.IO.StreamReader($resp.GetResponseStream())
+      $text = $reader.ReadToEnd()
+      $reader.Close()
+      return $text
+    } catch { return "" }
+  }
+}
+
 $bad = @()
 foreach ($r in $routes) {
   try {
@@ -33,6 +68,18 @@ foreach ($r in $routes) {
   }
   if ($code -eq $r.e) { Write-Host ("OK   {0} {1}" -f $code, $r.p) }
   else { Write-Host ("BAD  {0} {1} (expected {2})" -f $code, $r.p, $r.e); $bad += $r.p }
+}
+
+# Unknown TM SONS slugs must render the not-found page, whatever status code
+# the streamed response happens to carry.
+foreach ($u in $notFoundChecks) {
+  $html = Get-ResponseBody ("http://localhost:3311" + $u)
+  if ($html -match "This concept doesn") {
+    Write-Host ("OK   not-found content {0}" -f $u)
+  } else {
+    Write-Host ("BAD  not-found content missing {0}" -f $u)
+    $bad += $u
+  }
 }
 
 # Broken-image sweep: every /images/... referenced in rendered HTML must exist.

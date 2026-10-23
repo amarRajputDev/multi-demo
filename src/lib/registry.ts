@@ -7,6 +7,11 @@
  * IMPORTANT: All results, ranks, faculty credentials, student counts, and
  * testimonials in this project are ILLUSTRATIVE DEMONSTRATION CONTENT created
  * for a design demo. They are not real, verified achievements.
+ *
+ * The TM SONS entry is different: it is a concept for a real Ludhiana apparel
+ * business. Its contact numbers and location come from public listings and are
+ * pending owner verification. Product names are descriptive demo labels, prices
+ * are intentionally absent, and no image has been approved for commercial use.
  */
 
 export type DemoSlug =
@@ -15,7 +20,10 @@ export type DemoSlug =
   | "pulse-prep"
   | "northstar"
   | "quantum"
-  | "bloom";
+  | "bloom"
+  | "tm-sons"
+  | "sy-collections"
+  | "ciel-shop";
 
 export interface DemoMeta {
   slug: DemoSlug;
@@ -157,6 +165,63 @@ export const DEMOS: DemoMeta[] = [
     path: "/demos/bloom",
     utilityTone: "light",
   },
+  {
+    slug: "tm-sons",
+    name: "TM SONS",
+    shortName: "TM SONS",
+    tagline:
+      "Women's fashion and wholesale for Ludhiana retailers — winterwear, co-ord sets, ethnic collections and a quote-request buying experience.",
+    styleLabel: "Editorial · Premium · Wholesale",
+    audience: "Women's apparel · Wholesale + retail enquiries",
+    palette: {
+      bg: "#FAF7F2",
+      ink: "#1C1A17",
+      accent: "#B23B2E",
+      accentSoft: "#F2D3CD",
+      muted: "#6F6A61",
+    },
+    fonts: { display: "Bodoni Moda", body: "Jost" },
+    path: "/demos/tm-sons",
+    utilityTone: "light",
+  },
+  {
+    slug: "sy-collections",
+    name: "S_Y COLLECTIONS",
+    shortName: "S_Y",
+    tagline:
+      "A premium fashion-store redesign concept featuring everyday kurtis, coordinated sets, elegant product discovery and a refined mobile shopping experience.",
+    styleLabel: "Editorial · Premium · Fashion",
+    audience: "Women's fashion · Kurtis & coordinated sets",
+    palette: {
+      bg: "#FBF6F2",
+      ink: "#2C1F26",
+      accent: "#A63D57",
+      accentSoft: "#F0D5DB",
+      muted: "#7A6A71",
+    },
+    fonts: { display: "Bodoni Moda", body: "Jost" },
+    path: "/demos/sy-collections",
+    utilityTone: "light",
+  },
+  {
+    slug: "ciel-shop",
+    name: "CIÈL",
+    shortName: "CIÈL",
+    tagline:
+      "An editorial e-commerce concept featuring experimental streetwear, statement denim, modern product discovery and a premium shopping experience.",
+    styleLabel: "Editorial · Streetwear · Commerce",
+    audience: "Streetwear retail · D2C fashion",
+    palette: {
+      bg: "#0E0E10",
+      ink: "#F4F1EC",
+      accent: "#A9D6E5",
+      accentSoft: "#DCEEF5",
+      muted: "#8A8F96",
+    },
+    fonts: { display: "Syne", body: "Inter" },
+    path: "/demos/ciel-shop",
+    utilityTone: "dark",
+  },
 ];
 
 export const DEMO_SLUGS: DemoSlug[] = DEMOS.map((d) => d.slug);
@@ -169,6 +234,54 @@ export function getDemoMeta(slug: DemoSlug): DemoMeta {
   const meta = DEMOS.find((d) => d.slug === slug);
   if (!meta) throw new Error(`Unknown demo slug: ${slug}`);
   return meta;
+}
+
+const SMALL_NUMBERS = [
+  "zero",
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "ten",
+  "eleven",
+  "twelve",
+  "thirteen",
+  "fourteen",
+  "fifteen",
+  "sixteen",
+  "seventeen",
+  "eighteen",
+  "nineteen",
+];
+
+const TENS = [
+  "twenty",
+  "thirty",
+  "forty",
+  "fifty",
+  "sixty",
+  "seventy",
+  "eighty",
+  "ninety",
+];
+
+/**
+ * Spelled-out small integers for showcase copy, so headlines stay correct
+ * whenever a concept is added to `DEMOS` without touching the markup.
+ */
+export function numberWord(value: number): string {
+  if (!Number.isInteger(value) || value < 0 || value > 99) {
+    return String(value);
+  }
+  if (value < 20) return SMALL_NUMBERS[value];
+  const tens = TENS[Math.floor(value / 10) - 2];
+  const rest = value % 10;
+  return rest === 0 ? tens : `${tens}-${SMALL_NUMBERS[rest]}`;
 }
 
 /**

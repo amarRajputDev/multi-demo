@@ -11,9 +11,9 @@ export async function ShowcaseFooter() {
           <div className="sm:col-span-2 lg:col-span-1">
             <VizoWordmark />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-white/55">
-              A design studio for coaching institutes. This demo studio gathers
-              six of our website concepts in one place so you can find the
-              direction that fits your brand.
+              A design studio for coaching institutes and retail brands. This
+              demo studio gathers every concept in one place, so you can find
+              the direction that fits your brand.
             </p>
           </div>
 
@@ -42,7 +42,7 @@ export async function ShowcaseFooter() {
             <ul className="mt-4 space-y-2.5 text-sm text-white/65">
               <li>
                 <a href="#concepts" className="transition-colors hover:text-white">
-                  The six concepts
+                  All concepts
                 </a>
               </li>
               <li>
@@ -81,7 +81,7 @@ export async function ShowcaseFooter() {
           <p>© {await siteYear()} Vizo Technology · Demo studio</p>
           <p>
             All institute names, results, faculty credentials and testimonials
-            inside the six demos are illustrative demo content.
+            inside the coaching demos are illustrative demo content.
           </p>
         </div>
       </div>

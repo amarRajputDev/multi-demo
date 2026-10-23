@@ -13,6 +13,7 @@ const DEMOS = [
   "northstar",
   "quantum",
   "bloom",
+  "tm-sons",
 ];
 
 const server = spawn(
@@ -105,6 +106,67 @@ try {
   }
   const demoNote = await page.getByText(/nothing was stored or sent/i).count();
   if (!demoNote) failures.push("aurora: demo-only disclosure missing on success");
+  passed++;
+
+  // 5. TM SONS enquiry list: add → drawer → quantity stepper → remove.
+  await page.goto(`${BASE}/demos/tm-sons`, { waitUntil: "load" });
+  const addButton = page.locator('button[aria-label^="Add "]').first();
+  await addButton.scrollIntoViewIfNeeded();
+  await addButton.click();
+  const drawer = page.locator('[role="dialog"][aria-label="Enquiry list"]');
+  await drawer.waitFor({ state: "visible", timeout: 5000 });
+  const drawerLocked = await page.evaluate(
+    () => document.body.style.overflow === "hidden",
+  );
+  if (!drawerLocked) failures.push("tm-sons: body scroll not locked in enquiry drawer");
+  passed++;
+
+  const qty = drawer.locator('input[type="number"]').first();
+  if ((await qty.inputValue()) !== "1") {
+    failures.push(`tm-sons: expected initial quantity 1, got ${await qty.inputValue()}`);
+  }
+  await drawer.locator('button[aria-label^="Increase quantity"]').first().click();
+  if ((await qty.inputValue()) !== "2") {
+    failures.push(`tm-sons: quantity stepper did not increment (${await qty.inputValue()})`);
+  }
+  passed++;
+
+  await drawer.locator('button[aria-label^="Remove "]').first().click();
+  const emptyText = await drawer.getByText(/Nothing added yet/i).count();
+  if (!emptyText) failures.push("tm-sons: drawer did not return to empty state");
+  passed++;
+
+  await page.keyboard.press("Escape");
+  await drawer.waitFor({ state: "hidden", timeout: 5000 });
+  passed++;
+
+  // 6. TM SONS quote builder: empty submit surfaces errors; a valid submit
+  //    ends on the demo-only preview — never a "sent" confirmation.
+  await page.goto(`${BASE}/demos/tm-sons/wholesale`, { waitUntil: "load" });
+  const preview = page.locator('button:has-text("Preview enquiry")').first();
+  await preview.scrollIntoViewIfNeeded();
+  await preview.click();
+  await page.waitForSelector('[aria-invalid="true"]', { timeout: 5000 });
+  const quoteErrors = await page.locator("[role=alert]").count();
+  if (quoteErrors < 3) failures.push(`tm-sons: expected field errors, got ${quoteErrors}`);
+  passed++;
+
+  const picker = page.locator("#tm-product-picker");
+  await picker.selectOption({ index: 1 });
+  await page.getByRole("button", { name: "Add", exact: true }).click();
+
+  await page.fill("#tm-business", "Test Boutique");
+  await page.fill("#tm-contact-person", "Ritika Sharma");
+  await page.fill("#tm-phone", "9876543210");
+  await page.fill("#tm-city", "Ludhiana");
+  await page.fill("#tm-state", "Punjab");
+  await preview.click();
+
+  await page.getByText(/nothing was sent/i).waitFor({ timeout: 8000 });
+  const receivedNote = await page.getByText(/has not received this enquiry/i).count();
+  if (!receivedNote) failures.push("tm-sons: demo-only disclosure missing on preview");
+  const falseSuccess = await page.getByText(/successfully sent|order placed/i).count();
+  if (falseSuccess) failures.push("tm-sons: preview claims a real submission");
   passed++;
 
   await browser.close();

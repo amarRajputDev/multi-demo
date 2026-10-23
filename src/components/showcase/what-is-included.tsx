@@ -63,12 +63,14 @@ export function WhatIsIncluded() {
           02 — What every website includes
         </p>
         <h2 className="mt-3 max-w-2xl text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-          One complete coaching website — in every concept
+          One complete website — in every coaching concept
         </h2>
         <p className="mt-4 max-w-xl text-sm leading-relaxed text-white/60">
           Whichever design you pick, the structure underneath is production
           ready: everything a coaching institute needs to convert visitors into
-          enquiries.
+          enquiries. Retail and fashion concepts such as TM SONS swap this
+          content model for a product catalogue, collection pages and a
+          wholesale quote builder while keeping the same engineering standards.
         </p>
 
         <ul className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">

@@ -125,6 +125,21 @@ body {
 .font-bloom-body {
   font-family: var(--font-nunito-sans), system-ui, sans-serif;
 }
+.font-tmsons-display {
+  font-family: var(--font-bodoni-moda), "Times New Roman", Georgia, serif;
+}
+.font-tmsons-body {
+  font-family: var(--font-jost), system-ui, sans-serif;
+}
+.font-cielshop-display {
+  font-family: var(--font-syne), "Helvetica Neue", Arial, sans-serif;
+}
+.font-cielshop-body {
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+.font-cielshop-mono {
+  font-family: var(--font-ibm-plex-mono), ui-monospace, monospace;
+}
 .font-showcase {
   font-family: var(--font-geist-sans), system-ui, sans-serif;
 }

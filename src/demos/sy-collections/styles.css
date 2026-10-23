@@ -1,0 +1,15 @@
+/*
+ * S_Y COLLECTIONS demo - isolated typography layer.
+ *
+ * The font files themselves are already loaded by the root layout through
+ * next/font (Bodoni Moda + Jost), so nothing new is downloaded here. These two
+ * classes only belong to this demo; no existing rule or other demo is changed.
+ */
+
+.font-sy-display {
+  font-family: var(--font-bodoni-moda), "Times New Roman", Georgia, serif;
+}
+
+.font-sy-body {
+  font-family: var(--font-jost), ui-sans-serif, system-ui, sans-serif;
+}
